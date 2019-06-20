@@ -1,3 +1,7 @@
+<div class="alert alert-secondary" *ngIf="showDeleteMsg">
+  deleted successfully!
+</div>
+
 <table class="table">
   <thead>
     <tr>
@@ -11,10 +15,11 @@
       <td>{{customer.name}}</td>
       <td>{{customer.mobile}}</td>
       <td>{{customer.email}}</td>
-      <td><button class="btn btn-outline-info"> Edit </button></td>
-      <td><button class="btn btn-outline-danger"> Delete </button></td>
-      <td>{{customer.email}}</td>
+      <td><button class="btn btn-outline-info" (click)="onEdit(customer)"> Edit </button></td>
+      <td><button class="btn btn-outline-danger" (click)="onDelete(customer.$key)"> Delete </button></td>
     </tr>
   </ng-container>
 </table>
+
+
 

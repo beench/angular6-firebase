@@ -11,17 +11,22 @@ export class CustomerComponent implements OnInit {
   constructor(private customerService: CustomerService) {}
   submitted = false;
   showSuccessMsg = false;
+  showUpdateMsg = false;
   formControls = this.customerService.form.controls;
 
   ngOnInit() {}
 
-  onSubmit(form: NgForm) {
+  onSubmit() {
     this.submitted = true;
     if (this.customerService.form.valid) {
       if (this.customerService.form.get("$key").value == null) {
-        this.customerService.insertCustomer(this.customerService.form.value);
+        this.customerService.insertList(this.customerService.form.value);
         this.showSuccessMsg = true;
         setTimeout(() => this.showSuccessMsg=false, 3000);
+      } else {
+        this.customerService.updateList(this.customerService.form.value);
+        this.showUpdateMsg = true;
+        setTimeout(() => this.showUpdateMsg=false, 3000);
       }
       this.submitted = false;
       this.customerService.form.reset();
