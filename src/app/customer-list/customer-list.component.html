@@ -1,9 +1,20 @@
 <table class="table">
-<thead>
-  <tr>
-    <th scope="col">Name</th>
-    <th scope="col">Phone Number</th>
-    <th scope="col">Email</th>
-  </tr>
-</thead>
-</table>>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone Number</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <ng-container *ngFor="let customer of customerArray">
+    <tr>
+      <td>{{customer.name}}</td>
+      <td>{{customer.mobile}}</td>
+      <td>{{customer.email}}</td>
+      <td><button class="btn btn-outline-info"> Edit </button></td>
+      <td><button class="btn btn-outline-danger"> Delete </button></td>
+      <td>{{customer.email}}</td>
+    </tr>
+  </ng-container>
+</table>
+
