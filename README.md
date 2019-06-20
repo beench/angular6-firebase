@@ -1,3 +1,8 @@
+Project for learning about Angular6 and Firebase.
+credit from this link: https://www.youtube.com/watch?time_continue=1223&v=9wxEwE8UFr0
+
+-------------------------------------------------------------------------------------------------------------------------------
+
 # AngularFirebase
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
